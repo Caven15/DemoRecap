@@ -1,0 +1,25 @@
+<h2>Les bindings</h2>
+<div>
+  <h3>Property binding</h3>
+  <div>
+    <h4>One way binding</h4>
+    <p>Boujour et bienvenue {{prenom}}</p>
+  </div>
+  <div>
+    <h4>two way binding</h4>
+    <label for="prenom2">Votre prénom :</label>
+    <input type="text" [(ngModel)]="prenom2" id="prenom2">
+    <p>Votre prénom {{prenom2}}</p>
+  </div>
+  <div>
+    <h4>Event Binding</h4>
+    <p>Aujourd'hui nous sommes {{jour}}</p>
+    <button (click)="changerJour('Lundi')">Lundi</button>
+    <button (click)="changerJour('Mardi')">Mardi</button>
+    <button (click)="changerJour('Mercredi')">Mercredi</button>
+    <button (click)="changerJour('Jeudi')">Jeudi</button>
+    <button (click)="changerJour('Vendredi')">Vendredi</button>
+    <button (click)="changerJour('Samedi')">Samedi</button>
+    <button (click)="changerJour('Dimanche')">Dimanche</button>
+  </div>
+</div>

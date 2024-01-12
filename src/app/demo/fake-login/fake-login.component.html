@@ -1,0 +1,10 @@
+<form [formGroup]="fakeLoginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">E-mail :</label>
+    <input type="email" formControlName="email" id="email">
+  </div>
+
+  <div>
+    <button type="submit">Connexion</button>
+  </div>
+</form>

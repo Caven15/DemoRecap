@@ -1,0 +1,30 @@
+<fieldset>
+  <legend>Formulaire</legend>
+  <form [formGroup]="addForm" (ngSubmit)="submitForm()">
+    <!-- Champ pour le nom -->
+    <div>
+      <label for="nom">Nom :</label>
+      <input type="text" formControlName="nom" id="nom">
+    </div>
+
+    <div>
+      <label for="description">Description :</label>
+      <input type="text" formControlName="description" id="description">
+      <p *ngIf="!addForm.get('description')?.valid">
+        La description ne remplis pas les conditions requises
+      </p>
+    </div>
+
+    <div>
+      <label for="email">E-mail :</label>
+      <input type="email" formControlName="email" id="email">
+      <p *ngIf="!addForm.get('email')?.valid">
+        une adresse email doit contenir une @
+      </p>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="!addForm.valid">Ajouter</button>
+    </div>
+  </form>
+</fieldset>

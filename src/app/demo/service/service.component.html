@@ -1,0 +1,15 @@
+<div>
+  <h2>Service (bookList)</h2>
+  <ul>
+    <li *ngFor="let book of books; let i = index">
+      {{book}}
+      <button (click)="removeBook(i)">Supprimer</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <label for="newBook">Nouveau livre : </label>
+  <input type="text" [(ngModel)]="newBook" id="newBook">
+  <button (click)="addNewBook()">Ajouter</button>
+</div>

@@ -1,0 +1,19 @@
+<h2>Directives</h2>
+<ul>
+  <!-- ngfor -->
+  <li *ngFor="let tache of taches">
+    <!-- ngIf -->
+    <div *ngIf="tache.complet; else elseblock">
+      <!-- Affichage pour complet -->
+      <div>{{tache.id}}</div>
+      <span [ngClass]="{'complet' : tache.complet}">Vous avez {{tache.nom}} !!</span>
+      <div> Ok ! <input type="checkbox" [(ngModel)]="tache.complet"></div>
+    </div>
+    <ng-template #elseblock>
+      <!-- Affichage non complet  -->
+      <div>{{tache.id}}</div>
+      <p [ngClass]="{'complet' : !tache.complet}">Vous n'avez pas encore {{tache.nom}}</p>
+      <span> N-Ok ! <input type="button" (click)="changerEtat(tache.id)" value="Valider"></span>
+    </ng-template>
+  </li>
+</ul>

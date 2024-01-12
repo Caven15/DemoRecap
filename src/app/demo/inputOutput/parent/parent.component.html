@@ -1,0 +1,6 @@
+<div>
+  <h2>Composant parent</h2>
+  <app-child [messageFromParent]="message" (messageToParent)="handleMessage($event)"></app-child>
+  <!-- Affichage du message rçu du composant enfant -->
+  <p>MEssage reçu du composant enfant : {{messageRecu}}</p>
+</div>
